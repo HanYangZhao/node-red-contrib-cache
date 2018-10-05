@@ -1,58 +1,66 @@
 [
     {
-        "id": "f3cb898c.c292b8",
+        "id": "bd715d0b.483ac",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b6158b98.eda0b8",
         "type": "inject",
-        "z": "e9528acf.2c82d",
+        "z": "bd715d0b.483ac",
         "name": "",
         "topic": "timestamp",
         "payload": "",
-        "payloadType": "date",
+        "payloadType": "str",
         "repeat": "",
         "crontab": "",
         "once": false,
-        "x": 280,
-        "y": 180,
+        "onceDelay": "",
+        "x": 500,
+        "y": 300,
         "wires": [
             [
-                "a0110a47.53535"
+                "e989e911.ba8988"
             ]
         ]
     },
     {
-        "id": "a0110a47.53535",
+        "id": "e989e911.ba8988",
         "type": "Cache in",
-        "z": "e9528acf.2c82d",
+        "z": "bd715d0b.483ac",
         "name": "",
-        "cache": "b27f65d.3e20898",
+        "cache": "3fa61b47.490fa4",
         "keyType": "msg",
         "keyProperty": "topic",
         "valueType": "msg",
         "valueProperty": "payload",
         "useString": false,
-        "x": 460,
-        "y": 180,
+        "x": 720,
+        "y": 300,
         "wires": [
             [
-                "64cb797d.35d3"
+                "e2c3a059.f0ba9"
             ]
         ]
     },
     {
-        "id": "64cb797d.35d3",
+        "id": "e2c3a059.f0ba9",
         "type": "debug",
-        "z": "e9528acf.2c82d",
+        "z": "bd715d0b.483ac",
         "name": "",
         "active": true,
         "console": "false",
         "complete": "false",
-        "x": 680,
-        "y": 180,
+        "x": 940,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "6879b817.90256",
+        "id": "7a8278f5.e03fc8",
         "type": "inject",
-        "z": "e9528acf.2c82d",
+        "z": "bd715d0b.483ac",
         "name": "",
         "topic": "timestamp",
         "payload": "",
@@ -60,20 +68,20 @@
         "repeat": "",
         "crontab": "",
         "once": false,
-        "x": 280,
-        "y": 300,
+        "x": 460,
+        "y": 420,
         "wires": [
             [
-                "c861ebf4.e5bf7"
+                "eba27d44.4af1f"
             ]
         ]
     },
     {
-        "id": "c861ebf4.e5bf7",
+        "id": "eba27d44.4af1f",
         "type": "Cache out",
-        "z": "e9528acf.2c82d",
+        "z": "bd715d0b.483ac",
         "name": "",
-        "cache": "b27f65d.3e20898",
+        "cache": "3fa61b47.490fa4",
         "keyType": "msg",
         "keyProperty": "topic",
         "valueType": "msg",
@@ -81,14 +89,14 @@
         "ttlType": "msg",
         "ttlProperty": "",
         "useString": false,
-        "x": 460,
-        "y": 300,
+        "x": 720,
+        "y": 420,
         "wires": []
     },
     {
-        "id": "e9315f78.94def",
+        "id": "19b788ea.3f8aa7",
         "type": "inject",
-        "z": "e9528acf.2c82d",
+        "z": "bd715d0b.483ac",
         "name": "",
         "topic": "timestamp2",
         "payload": "",
@@ -96,16 +104,157 @@
         "repeat": "",
         "crontab": "",
         "once": false,
-        "x": 280,
-        "y": 380,
+        "x": 460,
+        "y": 460,
         "wires": [
             [
-                "c861ebf4.e5bf7"
+                "eba27d44.4af1f"
             ]
         ]
     },
     {
-        "id": "b27f65d.3e20898",
+        "id": "50ca9180.05a4d",
+        "type": "inject",
+        "z": "bd715d0b.483ac",
+        "name": "",
+        "topic": "",
+        "payload": "flush",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "128cce36.5465e2"
+            ]
+        ]
+    },
+    {
+        "id": "31f4d6b7.6283da",
+        "type": "inject",
+        "z": "bd715d0b.483ac",
+        "name": "",
+        "topic": "",
+        "payload": "keys",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "25f8b27.9d6fe4e"
+            ]
+        ]
+    },
+    {
+        "id": "128cce36.5465e2",
+        "type": "change",
+        "z": "bd715d0b.483ac",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "flush",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "e989e911.ba8988"
+            ]
+        ]
+    },
+    {
+        "id": "25f8b27.9d6fe4e",
+        "type": "change",
+        "z": "bd715d0b.483ac",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "keys",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 388,
+        "y": 199,
+        "wires": [
+            [
+                "e989e911.ba8988"
+            ]
+        ]
+    },
+    {
+        "id": "e9dc033d.f0c81",
+        "type": "inject",
+        "z": "bd715d0b.483ac",
+        "name": "",
+        "topic": "",
+        "payload": "flush",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 250,
+        "y": 620,
+        "wires": [
+            [
+                "d157b858.a844e8"
+            ]
+        ]
+    },
+    {
+        "id": "d157b858.a844e8",
+        "type": "change",
+        "z": "bd715d0b.483ac",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "flush",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 620,
+        "wires": [
+            [
+                "eba27d44.4af1f"
+            ]
+        ]
+    },
+    {
+        "id": "3fa61b47.490fa4",
         "type": "Cache",
         "z": "",
         "name": "abcd",
