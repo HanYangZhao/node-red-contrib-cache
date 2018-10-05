@@ -4,4 +4,3 @@ lib/*.js
 test/*.js
 *.tgz
 *.log
-dist

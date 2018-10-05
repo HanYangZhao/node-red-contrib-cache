@@ -1,0 +1,26 @@
+{
+  "cache" : {
+    "label" : {
+      "cache": "Cache",
+      "defaultTtl" : "Default TTL",
+      "checkPeriod" : "Check Interval",
+      "keyProperty" : "Key Property",
+      "valueProperty" : "Value Property",
+      "ttlProperty" : "TTL Property",
+      "useString" : "Use string payload"
+    },
+    "placeholder" : {
+      "keyProperty" : "default: topic",
+      "valueProperty" : "default: payload",
+      "ttlProperty" : "(optional)",
+      "defaultTtl" : "(in seconds, 0=unlimited)",
+      "checkPeriod" : "(in seconds, 0=never checked)"
+    },
+    "status": {
+      "keys": "__n__"
+    },
+    "errors" : {
+      "unknown" : "[NodeCache] Unknown Error (__error__)"
+    }
+  }
+}
