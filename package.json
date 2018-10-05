@@ -15,7 +15,8 @@
     "build": "grunt build",
     "test": "grunt test",
     "clean": "grunt clean",
-    "prepublish": "grunt build"
+    "prepublish": "grunt build",
+    "postinstall": "grunt build"
   },
   "homepage": "https://github.com/CANDY-LINE/node-red-contrib-cache#readme",
   "keywords": [
