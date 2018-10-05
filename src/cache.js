@@ -48,14 +48,28 @@ export default function(RED) {
       this.name = n.name;
       this.on('input', (msg) => {
         if (this.cacheNode) {
-          let key = RED.util.getMessageProperty(msg, this.keyProperty);
-          if (key) {
-            this.cacheNode.cache.get(key, (err, value) => {
+          console.log(msg);
+          if (msg.hasOwnProperty("flush")){
+            this.cacheNode.cache.flushAll();
+          }
+          else if (msg.hasOwnProperty("keys")){
+            this.cacheNode.cache.keys((err,mykeys) => {
               if (!err) {
-                RED.util.setMessageProperty(msg, this.valueProperty, (value === '' ? null : value));
+                RED.util.setMessageProperty(msg, this.valueProperty, (mykeys === '' ? null : mykeys));
                 this.send(msg);
               }
             });
+          }
+          else{
+            let key = RED.util.getMessageProperty(msg, this.keyProperty);
+            if (key) {
+              this.cacheNode.cache.get(key, (err, value) => {
+                if (!err) {
+                  RED.util.setMessageProperty(msg, this.valueProperty, (value === '' ? null : value));
+                  this.send(msg);
+                }
+              });
+            }
           }
         }
       });
