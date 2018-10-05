@@ -4,6 +4,8 @@
   <p>This node set <code>null</code> to <code>msg.payload</code> when <code>msg.topic</code> is empty or there&apos;s no value corresponding to the <code>msg.topic</code>.</p>
   <p>The property names for key(<code>msg.topic</code>) and value(<code>msg.payload</code>) are configurable.</p>
   <p>The number in the status message shows the size of the cached entries.</p>
+  <p> Receiving a <code>msg.flush</code> message will clear the cache </p>
+    <p> Receiving a <code>msg.keys</code> message will output all the keys the cache </p>
 </script>
 
 <script type="text/x-red" data-help-name="Cache out">
@@ -13,4 +15,5 @@
    <p>The property names for key(<code>msg.topic</code>) and value(<code>msg.payload</code>) are configurable.</p>
    <p>You can also provide TTL in <code>msg</code> object if necessary by setting <code>TTL property</code> in this node (not mandatory).</p>
    <p>The number in the status message shows the size of the cached entries.</p>
+   <p> Receiving a <code>msg.flush</code> message will clear the cache </p>
 </script>
